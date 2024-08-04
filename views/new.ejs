@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/new.css">
+</head>
+<body>
+    <%- include("partiels/header.ejs") %>
+    <div class="main">
+        <form action="/save" method="POST">
+            <div class="grid-container">
+                <% if (locals.data.isbn) { %>
+                    <img src="https://covers.openlibrary.org/b/isbn/<%= locals.data.isbn%>-M.jpg" alt="">
+                <%} else {%>
+                    <img src="nobook.webp" style="margin: 10px;" height="200px" alt="">
+
+                <% } %>
+                <div class="content">
+                    <div class="title textbox">
+                        <label for="title">Book title</label><br>
+                        <textarea name="title" id="title" name ="title"><%= locals.data.title %></textarea>
+                    </div>
+                   <div class="textbox">
+                    <label for="isbn">ISBN</label><br>
+                    <input type="number" id="isbn" name="isbn" value="<%= locals.data.isbn %>">
+                   </div>
+                    <div class="textbox">
+                        <label for="rating">Rating</label><br>
+                        <input type="number" id="rating" name="rating" value="<%= locals.data.rating %>">
+                    </div>
+                </div>
+            </div>
+           <div class="notes">
+            <div class="textbox">
+                <label for="reivew">Reivew</label><br>
+                <textarea name="review" id="review" ><%= locals.data.review %></textarea>
+            </div>
+            <div class="textbox note">
+                <label for="note">Note</label><br>
+                <textarea id="note" name="note"><%= locals.data.notes[0].note %></textarea>
+            </div>
+           </div>
+           <div class="bottom">
+                <button type="submit" name="id" value="<%= locals.data.id %>">Save</button>
+           </div>
+        </form>
+        
+    </div>
+    
+    <%- include("partiels/footer.ejs") %>
+</body>
+</html>

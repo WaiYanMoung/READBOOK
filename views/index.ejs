@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <%- include("partiels/header.ejs") %>
+        <% for (let i = 0; i < locals.data.length; i++) { %>
+    <div class="grid-container">
+        <img src="https://covers.openlibrary.org/b/isbn/<%= locals.data[i].isbn %>-M.jpg" alt="">
+        <div class="rowitem">
+            <h3 class="items"><%= locals.data[i].title %></h3>
+            <p class="rate items">Rated <%= locals.data[i].rating %></p>
+            <p class="isbn items">ISBN : <%= locals.data[i].isbn %></p>
+            <p class="review items"><%= locals.data[i].review %></p>
+            <div class="buttons">
+                <form action="view" method="get">
+                <button type="submit" value="<%= locals.data[i].id %>" name="id">View</button>    
+                </form>
+                <form action="edit" method="get">
+                    <button type="submit" value="<%= locals.data[i].id %>" name="id">Edit</button>
+                </form>
+                
+            </div>
+        </div>
+
+    </div>
+    <%}%>
+    <div class="space"></div>
+    <div class="add">
+        <form action="/new" method="get">
+    <button type="submit" class="new">+</button>
+        </form>
+
+    </div>
+    
+    <%- include("partiels/footer.ejs") %>
+</body>
+</html>

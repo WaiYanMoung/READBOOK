@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/view.css">
+</head>
+<body>
+    <%- include("partiels/header.ejs") %>
+    <div>
+        <div class="grid-container">
+            <% if (locals.data.isbn) { %>
+                <img src="https://covers.openlibrary.org/b/isbn/<%= locals.data.isbn%>-M.jpg" alt="">
+                <%} else {%>
+                <img src="nobook.webp" style="margin: 10px;" height="200px" alt="">
+                <% } %>
+            <div class="rowitem">
+                <h2 class="items"><%= locals.data.title %></h2>
+                <p class="rate items">Rated <%= locals.data.rating %> / 10</p>
+                <p class="isbn items">ISBN : <%= locals.data.isbn %></p>
+                <p class="review items">Reivews <br> <%= locals.data.review %></p>
+            </div>
+    
+        </div>
+        <div class="notes">
+            <h3>My notes</h3>
+            <br>
+            <p> <%= locals.data.notes[0].note %>             </p>
+        </div>
+    </div>
+    <%- include("partiels/footer.ejs") %>
+</body>
+</html>

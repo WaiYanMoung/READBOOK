@@ -1,0 +1,44 @@
+.title{
+
+    width: 100%;
+}
+.title textarea{
+    height: 100px;
+    border-radius: 5px;
+}
+.textbox{
+    margin: 15px;
+}
+.textbox textarea {
+    padding: 5px;
+    width: 95%;
+    height: 50px;
+}
+.textbox input{
+    width: 50%;
+    height: 30px;
+}
+.content{
+    margin-left: 5px;
+    
+}
+.main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.notes{
+    margin-left: 20px;
+}
+.bottom{
+    margin-bottom: 3em;
+}
+.bottom button{
+    width: 90%;
+    margin-left: 50px;
+    height: 30px;
+}
+
+#note{
+    height: 10em;
+    
+}

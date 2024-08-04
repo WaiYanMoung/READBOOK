@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    align-content: center;
+    height: 3em;
+    background-color: #55883B;
+    color: white;
+    padding-left: 20px;
+}
+.footer{
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    height: 2em;
+    background-color: #55883B;
+    color: white;
+    position: fixed;
+}
+.grid-container{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 0.1fr 1.6fr;
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+.grid-container img{
+    /* width: 400px; */
+    grid: 0%;
+    border-radius: 15px;
+}
+.space{
+    margin-top: 200px;
+}
+.grid-container .rowitem{
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+
+}
+.items{
+    margin-bottom: 5px;
+}
+.rate{
+    font-weight: bold;
+    color: gray;
+}
+.isbn{
+    font-weight: bold;
+    color: gray;
+}
+.buttons{
+    margin-top: 20px;
+    align-self: flex-end;
+    height: 3em;
+    
+}
+.buttons form {
+    float: left;
+}
+button{
+    margin-left: 5px;
+    bottom: 0;
+    background-color: #55883B;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 20px;
+    color: white;
+    font-size: 15px;
+}
+.add{
+    margin-bottom: 4em;
+       position: fixed;
+       width: 50px;
+       height: 50px;
+       bottom: 0;
+       margin-left: 10px;
+}
+.new{
+    background-color: rgb(99, 99, 198);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 50px;
+    box-shadow: 5px 5px 20px rgb(106, 106, 156);
+}
